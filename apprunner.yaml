@@ -1,6 +1,11 @@
 version: 1.0
-runtime: docker
+runtime: nodejs18
 build:
-  dockerfile: Dockerfile
+  commands:
+    build: npm install && npm run build
 run:
+  command: npm start
   port: 3000
+  runtime-environment-variables:
+    - name: NODE_ENV
+      value: production
