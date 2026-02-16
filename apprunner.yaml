@@ -1,0 +1,10 @@
+version: 1.0
+runtime: docker
+build:
+  dockerfile: Dockerfile
+  docker_build_args: {}
+run:
+  runtime_environment_variables:
+    NODE_ENV: "production"
+  port: 3000
+  command: serve -s dist -l 3000
